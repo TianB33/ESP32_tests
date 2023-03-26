@@ -28,7 +28,7 @@ previous try of broadcasting UDP packets.
 
 ## PING_PONG
 
-Between M_recv and M_send: Need to connect GPIO4 to GPIO5, GPIO5 to GPIO4, GND to GND. \n
+Between M_recv and M_send: Need to connect GPIO4 to GPIO5, GPIO5 to GPIO4, GND to GND. <br />
 Between W_recv and W_send: Need to connect GPIO4 to GPIO5, GPIO5 to GPIO4, GND to GND. (same)
 
 Works as follows:
