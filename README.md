@@ -15,11 +15,11 @@ ESP32 promiscuous mode sniffer.
 
 ## GY-511 and MPU6050
 
-GY-511: Need to connect GND to GND, SDA to GPIO21, SCL to GPIO22, VIN to 3V3. 
-MPU6050: Need to connect GND to GND, SDA to GPIO21, SCL to GPIO22, VCC to 3V3.
+GY-511: Need to connect GND to GND, SDA to GPIO21, SCL to GPIO22, VIN to 3V3. <br />
+MPU6050: Need to connect GND to GND, SDA to GPIO21, SCL to GPIO22, VCC to 3V3. <br />
 Can change GPIO pins in the source code.
 
-tester codes for GY-511 (magnetometer and accelerometer) and MPU6050 (gyroscope and accelerometer). 
+tester codes for GY-511 (magnetometer and accelerometer) and MPU6050 (gyroscope and accelerometer). <br />
 I used complementary filter for MPU6050. For GY-511, I had a problem getting the heading angle out of the x,y,z raw data. atan(y/x) seems to be not working.
 
 ## udp_node
