@@ -35,7 +35,7 @@ Works as follows:
 
 M_send_node is broadcasting raw packets. W_recv_node is in promiscuous mode and can sniff the packets with rssi values. If the RSSI value is high enough, a UART
 message is sent to W_send_note to send a raw packet back to M_recv_node. RSSI value is in the UART message, and sent back to M_recv_node. M_recv_node respond to
-the RSSI value in the message and change its frequency of LED blinking. (LED part may not work. Not tested)
+the RSSI value in the message and change its frequency of LED blinking. (LED part is not tested and will not work for external LED)
 
 M_recv and W_recv are in promiscuous mode (WIFI_MODE_NONE), and M_send and W_sned are in AP mode (WIFI_MODE_AP).
 
@@ -44,3 +44,13 @@ is to get RSSI values. But to receive UDP packets, M and W need to be under the 
 
 ## Freq_based
 
+In PING_PONG, the M_recv node respond to RSSI values. This **Freq_based** is a version of PING_PONG where W_send node send many raw packets back to M_recv node, where
+the frequency is based on the RSSI value. This could improve the stability of the system.
+
+**Issue: Now, the M_recv node seems unable to receive a lot of raw packets. This may be due to the slow nature of promiscuous mode..**
+
+## files in Include
+
+esp_gy511.h - for GY-511 <br />
+esp_gyro_accel.h - for MPU6050 <br />
+esp_raw_packet.h - for preparing and sending raw packets.
