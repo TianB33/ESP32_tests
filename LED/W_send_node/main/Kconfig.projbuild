@@ -1,0 +1,47 @@
+menu "W send node Configuration"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+ 
+    config UART_PORT_NUM
+        int "UART port number"
+        range 0 1
+        default 1
+
+    config UART_BAUD_RATE
+        int "UART communication speed"
+        range 1200 5000000
+        default 115200
+
+    config UART_RXD
+        int "UART RXD pin number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_IN_RANGE_MAX
+        default 5
+
+    config UART_TXD
+        int "UART TXD pin number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 4
+
+    config TASK_STACK_SIZE
+        int "UART echo example task stack size"
+        range 1024 16384
+        default 2048
+
+    config WIFI_SSID
+        string "WiFi SSID"
+        default "myssid"
+
+    config WIFI_PASSWORD
+        string "WiFi Password"
+        default "mypassword"
+
+    config WIFI_CHANNEL
+        int "WiFi Channel"
+        range 1 13
+        default 1
+
+    config WIFI_MAX_CONN
+        int "Maximal STA connections"
+        default 4
+
+endmenu
