@@ -35,7 +35,7 @@ Works as follows:
 
 M_send_node is broadcasting raw packets. W_recv_node is in promiscuous mode and can sniff the packets with RSSI values. If the RSSI value is high enough, a UART
 message is sent to W_send_note to send a raw packet back to M_recv_node. RSSI value is in the UART message, and sent back to M_recv_node. M_recv_node responds to
-the RSSI value in the message and change its frequency of LED blinking. (LED part is not tested and will not work for external LED)
+the RSSI value in the message and change its frequency of LED blinking. (For LED part, use "LED")
 
 M_recv and W_recv are in promiscuous mode (WIFI_MODE_NONE), and M_send and W_sned are in AP mode (WIFI_MODE_AP).
 
@@ -48,6 +48,10 @@ In PING_PONG, the M_recv node responds to RSSI values.  **Freq_based** is a vers
 the frequency is based on the RSSI value. This change could improve the stability of the system.
 
 **Issue: Now, the M_recv node seems unable to receive a lot of raw packets. I tried IRAM_ATTR and removed the printfs in the callback, but this won't help. The most likely cause is the slow speed of promiscuous mode.**
+
+## LED
+
+A working LED version of PING-PONG. Connect a LED onto GPIO32, it will blink at a frequency inversely proportional to the distance between M-node and W-node.
 
 ## files in Include
 
